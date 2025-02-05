@@ -1,6 +1,9 @@
+require('dotenv').config();
+
 const express = require('express');
 const cors = require('cors');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
+
 
 const app = express();
 const port = 5000;
@@ -9,7 +12,7 @@ app.use(cors({ origin: 'http://localhost:5173' }));
 app.use(express.json({ limit: '50mb' })); 
 
 
-const genAI = new GoogleGenerativeAI('AIzaSyB6MaNTwnkW99Jy-SkWA0YncconErj5u0M');
+const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
 
 app.post('/analyze-image', async (req, res) => {
   try {
@@ -73,6 +76,7 @@ app.post('/analyze-image', async (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
+
 
 
 
