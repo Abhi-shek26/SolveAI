@@ -1,4 +1,4 @@
-# AI Math Solver 🧑‍🏫🤖
+# Solve AI 🧑‍🏫🤖
 
 A smart web application that lets you **draw**  expressions and **solve** them using the power of **AI**!
 
