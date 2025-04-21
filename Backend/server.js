@@ -6,9 +6,9 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT;
 
-app.use(cors({ origin: 'http://localhost:5173' })); 
+app.use(cors({ origin: process.env.ALLOWED_ORIGIN  })); 
 app.use(express.json({ limit: '50mb' })); 
 
 

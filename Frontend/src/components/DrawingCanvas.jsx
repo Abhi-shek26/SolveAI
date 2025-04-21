@@ -73,7 +73,7 @@ const DrawingCanvas = () => {
     setAnalysis("");
 
     try {
-      const response = await fetch("http://localhost:5000/analyze-image", {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/analyze-image`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ image }),
@@ -94,7 +94,6 @@ const DrawingCanvas = () => {
     <div style={{ textAlign: "center", padding: "20px" }}>
       <h2>Draw Something & Analyze with AI</h2>
 
-      {/* Canvas */}
       <canvas
         ref={canvasRef}
         width={400}
@@ -110,7 +109,6 @@ const DrawingCanvas = () => {
         onMouseLeave={stopDrawing}
       />
 
-      {/* Controls */}
       <div style={{ marginTop: "10px" }}>
         <button onClick={() => handleColorChange("black")}>Black</button>
         <button onClick={() => handleColorChange("red")}>Red</button>
@@ -122,7 +120,6 @@ const DrawingCanvas = () => {
         </button>
       </div>
 
-      {/* Display AI Response */}
       {analysis && (
         <div style={{ marginTop: "20px", padding: "10px", border: "1px solid black" }}>
           <h3>AI Response:</h3>
