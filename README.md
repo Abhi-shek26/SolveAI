@@ -1,4 +1,4 @@
-# Solve AI 🧑‍🏫🤖
+# [Solve AI](https://boisterous-crepe-972e2b.netlify.app/) 🧑‍🏫🤖
 
 A smart web application that lets you **draw**  expressions and **solve** them using the power of **AI**!
 
@@ -12,6 +12,9 @@ A smart web application that lets you **draw**  expressions and **solve** them u
 - **Frontend**: React.js, HTML, CSS
 - **Backend**: Node.js, Express
 - **AI**: Google Gemini API (for solving problems)
+
+### Deployed Link -
+https://boisterous-crepe-972e2b.netlify.app/
 
 
 
