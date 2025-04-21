@@ -8,7 +8,20 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 const app = express();
 const port = process.env.PORT;
 
-app.use(cors({ origin: process.env.ALLOWED_ORIGIN  })); 
+const allowedOrigins = [
+  'https://boisterous-crepe-972e2b.netlify.app', // ✅ no trailing slash
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin.replace(/\/$/, ''))) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+}));
 app.use(express.json({ limit: '50mb' })); 
 
 
